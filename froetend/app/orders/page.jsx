@@ -10,6 +10,7 @@ import { Search, User, Clock, CheckCircle, FileText, MessageSquare, AlertCircle 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { getBuyerOrders } from "@/lib/api/order"
+import { API_URL } from "@/lib/apiClient"
  // Import the getBuyerOrders function
 
 export default function OrdersPage() {
@@ -26,6 +27,8 @@ export default function OrdersPage() {
         setLoading(true)
         const response = await getBuyerOrders()
         setOrders(response.orders || [])
+        console.log(response);
+        
         setError(null)
       } catch (err) {
         console.error("Error fetching orders:", err)
@@ -154,7 +157,7 @@ export default function OrdersPage() {
                           <CardHeader className="p-0">
                             <div className="relative h-40">
                               <Image
-                                src={`/placeholder.svg?height=160&width=400&text=${order.serviceTitle.substring(0, 20)}`}
+                                src={API_URL + order.serviceId.images.find(img => img.isMain)?.url || API_URL + order.serviceId.images[0].url}
                                 alt={order.serviceTitle}
                                 fill
                                 className="object-cover"
@@ -169,7 +172,7 @@ export default function OrdersPage() {
                               <div className="flex items-center gap-2">
                                 <div className="h-8 w-8 rounded-full overflow-hidden">
                                   <Image
-                                    src="/placeholder.svg?height=32&width=32"
+                                    src=  {API_URL +  order.sellerId.profilePicture}
                                     alt="Seller"
                                     width={32}
                                     height={32}
@@ -250,6 +253,7 @@ export default function OrdersPage() {
                             <div className="flex items-center justify-between mb-2">
                               <div className="flex items-center gap-2">
                                 <div className="h-8 w-8 rounded-full overflow-hidden">
+                                
                                   <Image
                                     src="/placeholder.svg?height=32&width=32"
                                     alt="Seller"

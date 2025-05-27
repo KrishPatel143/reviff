@@ -40,11 +40,12 @@ controllers.getOrders = async (req, res) => {
       .sort(sortOptions[sortBy])
       .skip((page - 1) * limit)
       .limit(Number(limit))
-      .populate('buyerId', 'name email profileImage')
-      .populate('sellerId', 'name email profileImage')
+      .populate('buyerId')
+      .populate('sellerId')
       .select('-messages'); // Exclude messages to reduce response size
 
     const total = await Order.countDocuments(query);
+    console.log(total);
 
     res.json({
       totalOrders: total,
@@ -86,10 +87,12 @@ controllers.getBuyerOrders = async (req, res) => {
       .sort(sortOptions[sortBy])
       .skip((page - 1) * limit)
       .limit(Number(limit))
-      .populate('sellerId', 'name email profileImage')
+      .populate('sellerId')
+      .populate('serviceId')
       .select('-messages'); // Exclude messages to reduce response size
-
-    const total = await Order.countDocuments(query);
+      
+      const total = await Order.countDocuments(query);
+      console.log(total);
 
     res.json({
       totalOrders: total,
@@ -218,8 +221,8 @@ controllers.getSellerServices = async (req, res) => {
 controllers.getOrderById = async (req, res) => {
   try {
     const order = await Order.findById(req.params.orderId)
-      .populate('buyerId', 'name email profileImage')
-      .populate('sellerId', 'name email profileImage')
+      .populate('buyerId')
+      .populate('sellerId')
       .populate('serviceId');
 
     if (!order) {

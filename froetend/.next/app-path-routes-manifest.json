@@ -1,0 +1,20 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/becomeSeller/page": "/becomeSeller",
+  "/orders/[id]/page": "/orders/[id]",
+  "/page": "/",
+  "/orders/page": "/orders",
+  "/login/page": "/login",
+  "/seller/orders/[id]/page": "/seller/orders/[id]",
+  "/register/page": "/register",
+  "/seller/add-service/page": "/seller/add-service",
+  "/seller/orders/page": "/seller/orders",
+  "/seller/profile/edit/page": "/seller/profile/edit",
+  "/seller/profile/page": "/seller/profile",
+  "/seller/services/edit/[id]/page": "/seller/services/edit/[id]",
+  "/seller/services/page": "/seller/services",
+  "/services/[id]/order/page": "/services/[id]/order",
+  "/services/page": "/services",
+  "/services/[id]/page": "/services/[id]"
+}

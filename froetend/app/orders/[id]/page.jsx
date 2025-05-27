@@ -21,6 +21,8 @@ export default function OrderDetailsPage({ params }) {
       try {
         setLoading(true)
         const data = await getOrderById(serviceId)
+        console.log(data);
+        
         setOrder(data)
         setLoading(false)
       } catch (err) {
@@ -82,7 +84,7 @@ export default function OrderDetailsPage({ params }) {
         {/* Order Header and Summary */}
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="flex-1">
-            {/* Order description and seller info are in order-header */}
+            
           </div>
           <div className="w-full md:w-auto flex flex-col gap-2">
             <OrderSummary order={order} />
