@@ -1,0 +1,852 @@
+{
+	"info": {
+		"_postman_id": "da78a873-689e-4a8a-8970-4737b1497eb3",
+		"name": "Riveff",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28616460",
+		"_collection_link": "https://my-workshape.postman.co/workspace/My-Workspace~68fd7259-cb73-469a-802d-ac94665a671e/collection/31991281-da78a873-689e-4a8a-8970-4737b1497eb3?action=share&source=collection_link&creator=28616460"
+	},
+	"item": [
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "_id",
+								"value": "507f1f77bcf86cd799439011",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Professional App Development\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/update/507f1f77bcf86cd799439011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"update",
+								"507f1f77bcf86cd799439011"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "507f1f77bcf86cd799439011",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWNlYWYwOWI2MGM0NGI3NGYzYTk2MyIsInVzZXJuYW1lIjoiMSIsImVtYWlsIjoiMUByZXZpZmYuY29tIiwiaXNTZWxsZXIiOnRydWUsImlhdCI6MTc0Njg3MjMxMCwiZXhwIjoxNzQ3NDc3MTEwfQ.DB4pjd9Lq77bwCrFXvaaP-j5CSlOXxMJlD6FgXGYmjw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Professional Logo Design\",\r\n    \"description\": \"I will create a unique and modern logo design for your brand\",\r\n    \"category\": \"Graphics & Design\",\r\n    \"subcategory\": \"Logo Design\",\r\n    \"tags\": [\"logo\", \"branding\", \"design\"],\r\n    \"pricing\": {\r\n        \"startingAt\": 50,\r\n        \"packages\": [\r\n            {\r\n                \"name\": \"Basic\",\r\n                \"description\": \"1 concept, 2 revisions, source files\",\r\n                \"deliveryTime\": 3,\r\n                \"price\": 50,\r\n                \"includedFeatures\": [\r\n                    \"1 concept\",\r\n                    \"2 revisions\",\r\n                    \"Source files\",\r\n                    \"Basic support\"\r\n                ]\r\n            },\r\n            {\r\n                \"name\": \"Standard\",\r\n                \"description\": \"2 concepts, 3 revisions, source files, social media kit\",\r\n                \"deliveryTime\": 5,\r\n                \"price\": 100,\r\n                \"includedFeatures\": [\r\n                    \"2 concepts\",\r\n                    \"3 revisions\",\r\n                    \"Source files\",\r\n                    \"Social media kit\",\r\n                    \"Priority support\"\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"requirements\": \"Please provide your brand name, values, and any specific color preferences\",\r\n    \"images\": [\r\n        {\r\n            \"url\": \"https://example.com/portfolio1.jpg\",\r\n            \"isMain\": true\r\n        },\r\n        {\r\n            \"url\": \"https://example.com/portfolio2.jpg\",\r\n            \"isMain\": false\r\n        }\r\n    ],\r\n    \"languages\": [\"English\"],\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"add"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "507f1f77bcf86cd799439011",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/delete/67df0baaf04ec2674f0a3678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"delete",
+								"67df0baaf04ec2674f0a3678"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/507f1f77bcf86cd799439011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"507f1f77bcf86cd799439011"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Seller Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWNlYWYwOWI2MGM0NGI3NGYzYTk2MyIsInVzZXJuYW1lIjoiMSIsImVtYWlsIjoiMUByZXZpZmYuY29tIiwiaXNTZWxsZXIiOnRydWUsImlhdCI6MTc0Njg3MjMxMCwiZXhwIjoxNzQ3NDc3MTEwfQ.DB4pjd9Lq77bwCrFXvaaP-j5CSlOXxMJlD6FgXGYmjw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/seller/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"seller",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/search?q=web+development",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "web+development"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"1a\",\r\n  \"email\": \"1a@Reviff.com\",\r\n  \"password\": \"123456\",\r\n  \"firstName\": \"Samar\",\r\n  \"lastName\": \"Hayat\",\r\n  \"isSeller\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE4MTg4LCJleHAiOjE3NDYxMjI5ODh9.zRB4o7dIjzH8KlqVNcWQV2GLqtuOhVvtZcHlEcm8d3o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"1@reviff.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE4MTg4LCJleHAiOjE3NDYxMjI5ODh9.zRB4o7dIjzH8KlqVNcWQV2GLqtuOhVvtZcHlEcm8d3o",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"johndoe\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"securepassword123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"isSeller\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/verify-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"verify-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWNlYWYwOWI2MGM0NGI3NGYzYTk2MyIsInVzZXJuYW1lIjoiMSIsImVtYWlsIjoiMUByZXZpZmYuY29tIiwiaXNTZWxsZXIiOmZhbHNlLCJpYXQiOjE3NDY3MjYyNTgsImV4cCI6MTc0NzMzMTA1OH0.e_QrdJacpDH6B0bUawRzLjcFwxhtiOCixgmTl84_f5g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"johndoe\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"securepassword123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"isSeller\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update My Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE4MTg4LCJleHAiOjE3NDYxMjI5ODh9.zRB4o7dIjzH8KlqVNcWQV2GLqtuOhVvtZcHlEcm8d3o",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe Updated\",\r\n  \"profilePicture\": \"/uploads/profile-pics/johndoe.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Become A Seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWNlYWYwOWI2MGM0NGI3NGYzYTk2MyIsInVzZXJuYW1lIjoiMSIsImVtYWlsIjoiMUByZXZpZmYuY29tIiwiaXNTZWxsZXIiOmZhbHNlLCJpYXQiOjE3NDY4NzE5NDgsImV4cCI6MTc0NzQ3Njc0OH0._dZF7x-z7zLy-iKtBR0lsygCgmofxmxv5JQ2jW61EZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWNlYWYwOWI2MGM0NGI3NGYzYTk2MyIsInVzZXJuYW1lIjoiMSIsImVtYWlsIjoiMUByZXZpZmYuY29tIiwiaXNTZWxsZXIiOmZhbHNlLCJpYXQiOjE3NDY4NzE5NDgsImV4cCI6MTc0NzQ3Njc0OH0._dZF7x-z7zLy-iKtBR0lsygCgmofxmxv5JQ2jW61EZQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isSeller\": true,\r\n  \"sellerProfile\": {\r\n    \"description\": \"Freelance web developer specializing in React and Node.js\",\r\n    \"languages\": [\"English\", \"French\"],\r\n    \"skills\": [\"Web Development\", \"React\", \"Node.js\", \"UI/UX\"],\r\n    \"location\": {\r\n      \"country\": \"Canada\",\r\n      \"city\": \"Toronto\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE4MTg4LCJleHAiOjE3NDYxMjI5ODh9.zRB4o7dIjzH8KlqVNcWQV2GLqtuOhVvtZcHlEcm8d3o",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"currentPassword\": \"securepassword123\",\r\n  \"newPassword\": \"newSecurePassword456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE4MTg4LCJleHAiOjE3NDYxMjI5ODh9.zRB4o7dIjzH8KlqVNcWQV2GLqtuOhVvtZcHlEcm8d3o",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"newSecurePassword456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Seller Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE4MTg4LCJleHAiOjE3NDYxMjI5ODh9.zRB4o7dIjzH8KlqVNcWQV2GLqtuOhVvtZcHlEcm8d3o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"johndoe\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"securepassword123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"isSeller\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/680a7e1b1b6e4c84fd4867dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"680a7e1b1b6e4c84fd4867dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"designpro\",\r\n  \"email\": \"designer@example.com\",\r\n  \"password\": \"securepassword123\",\r\n  \"firstName\": \"Sarah\",\r\n  \"lastName\": \"Smith\",\r\n  \"isSeller\": true,\r\n  \"sellerProfile\": {\r\n    \"description\": \"Professional graphic designer with 5+ years of experience\",\r\n    \"languages\": [\"English\", \"Spanish\"],\r\n    \"skills\": [\"Logo Design\", \"Branding\", \"UI/UX\", \"Illustration\"],\r\n    \"location\": {\r\n      \"country\": \"United States\",\r\n      \"city\": \"San Francisco\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceId\": \"507f1f77bcf86cd799439011\",\r\n  \"packageSelected\": \"Standard\",\r\n  \"requirements\": \"I need a professional logo design for my software company. I prefer blue and green colors with a modern tech feel. Please include source files.\",\r\n  \"initialMessage\": \"Hi, looking forward to working with you on my logo project!\",\r\n  \"dueDate\": \"2023-05-10T00:00:00.000Z\",\r\n  \"milestones\": [\r\n    {\r\n      \"title\": \"Initial Concepts\",\r\n      \"description\": \"3-5 initial design concepts\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-04-30T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Revisions\",\r\n      \"description\": \"Revisions based on feedback\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-05T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Final Delivery\",\r\n      \"description\": \"Final logo with all source files\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-10T00:00:00.000Z\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requirements\": \"Updated requirements: I need a professional logo design for my software company. I prefer blue and green colors with a modern tech feel. Please include source files and also a black and white version.\",\r\n  \"milestones\": [\r\n    {\r\n      \"title\": \"Initial Concepts\",\r\n      \"description\": \"3-5 initial design concepts\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-04-30T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Revisions\",\r\n      \"description\": \"Revisions based on feedback\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-05T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Final Delivery\",\r\n      \"description\": \"Final logo with all source files\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-10T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Brand Guide\",\r\n      \"description\": \"Simple brand guide with color codes and usage instructions\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-15T00:00:00.000Z\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/updateOrder/680a890aa3ec8d89ebb9584a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"updateOrder",
+								"680a890aa3ec8d89ebb9584a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGE3ZGI2MWI2ZTRjODRmZDQ4NjdkOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsImlzU2VsbGVyIjpmYWxzZSwiaWF0IjoxNzQ1NTE5MTkwLCJleHAiOjE3NDYxMjM5OTB9.xk0-VeZli9TOMndxGjqWRqO8XG_Kpv6F8mi1vzYS6Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requirements\": \"Updated requirements: I need a professional logo design for my software company. I prefer blue and green colors with a modern tech feel. Please include source files and also a black and white version.\",\r\n  \"milestones\": [\r\n    {\r\n      \"title\": \"Initial Concepts\",\r\n      \"description\": \"3-5 initial design concepts\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-04-30T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Revisions\",\r\n      \"description\": \"Revisions based on feedback\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-05T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Final Delivery\",\r\n      \"description\": \"Final logo with all source files\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-10T00:00:00.000Z\"\r\n    },\r\n    {\r\n      \"title\": \"Brand Guide\",\r\n      \"description\": \"Simple brand guide with color codes and usage instructions\",\r\n      \"status\": \"pending\",\r\n      \"date\": \"2023-05-15T00:00:00.000Z\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/deleteOrder/680a890aa3ec8d89ebb9584a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"deleteOrder",
+								"680a890aa3ec8d89ebb9584a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Multer",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmVkZGUyMzQyNzZiZGZhMDVkY2YwYSIsInVzZXJuYW1lIjoiMWEiLCJlbWFpbCI6IjFhQHJldmlmZi5jb20iLCJpc1NlbGxlciI6dHJ1ZSwiaWF0IjoxNzQ3OTA5OTE2LCJleHAiOjE3NDg1MTQ3MTZ9.tTdFl87cGQsgWzwIXKOhck_JO3sv_joPl8tvStyBOnk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Wallpapers/astronaut-earth-moon-movies-wallpaper.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uploads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmVkZGUyMzQyNzZiZGZhMDVkY2YwYSIsInVzZXJuYW1lIjoiMWEiLCJlbWFpbCI6IjFhQHJldmlmZi5jb20iLCJpc1NlbGxlciI6dHJ1ZSwiaWF0IjoxNzQ3OTEwNjU5LCJleHAiOjE3NDg1MTU0NTl9.kH074hmtcgSoqHeDrAzqpZXqXYUnaf_JOf8_DilJOrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/D:/Wallpapers/Background-1.jpg",
+										"/D:/Wallpapers/balloon-7102509_1280.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/upload-multiple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"upload-multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmVkZGUyMzQyNzZiZGZhMDVkY2YwYSIsInVzZXJuYW1lIjoiMWEiLCJlbWFpbCI6IjFhQHJldmlmZi5jb20iLCJpc1NlbGxlciI6dHJ1ZSwiaWF0IjoxNzQ3OTEwNjU5LCJleHAiOjE3NDg1MTU0NTl9.kH074hmtcgSoqHeDrAzqpZXqXYUnaf_JOf8_DilJOrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/uploads/files-1747910733487-363439663.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"uploads",
+								"files-1747910733487-363439663.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
