@@ -32,6 +32,16 @@ export function SellerOrderHeader({ order }) {
     return date.toLocaleDateString('en-US', options)
   }
 
+  // Extract buyer information from the order structure
+  const buyerInfo = {
+    name: order.buyerId ? `${order.buyerId.firstName || ''} ${order.buyerId.lastName || ''}`.trim() || order.buyerId.username : 'Unknown Buyer',
+    avatar: order.buyerId?.profilePicture || "/default-avatar.png",
+    level: order.buyerId?.sellerProfile?.sellerLevel || "Customer",
+    rating: order.buyerId?.averageRating || 0,
+    reviews: order.buyerId?.totalReviews || 0,
+    email: order.buyerId?.email
+  }
+
   return (
     <>
       {/* Breadcrumbs and Back Button */}
@@ -44,7 +54,7 @@ export function SellerOrderHeader({ order }) {
             </Link>
           </Button>
           <span className="text-muted-foreground">/</span>
-          <span>Order #{order._id || order.id}</span>
+          <span>Order #{order._id?.slice(-8) || order.id}</span>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -72,9 +82,12 @@ export function SellerOrderHeader({ order }) {
       {/* Order Details */}
       <div className="flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">{order.title || "Untitled Order"}</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-2">
+            {order.serviceTitle || order.title || "Untitled Order"}
+          </h1>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <Badge className={getStatusBadgeClass(order.status)}>{order.status || "Pending"}</Badge>
+            <Badge variant="outline">{order.packageSelected || "Standard"}</Badge>
             <div className="flex items-center gap-1 text-sm">
               <Clock className="h-4 w-4 text-muted-foreground" />
               <span>Due: {formatDate(order.dueDate || order.deliveryDate)}</span>
@@ -83,12 +96,15 @@ export function SellerOrderHeader({ order }) {
               <Calendar className="h-4 w-4 text-muted-foreground" />
               <span>Ordered: {formatDate(order.createdAt || order.orderDate)}</span>
             </div>
+            <div className="flex items-center gap-1 text-sm font-medium">
+              <span>${order.price}</span>
+            </div>
           </div>
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-10 w-10 rounded-full overflow-hidden">
+            <div className="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
               <Image
-                src={order.buyer?.avatar || "/placeholder.svg"}
-                alt={order.buyer?.name || "Buyer"}
+                src={buyerInfo.avatar}
+                alt={buyerInfo.name}
                 width={40}
                 height={40}
                 className="object-cover"
@@ -96,18 +112,21 @@ export function SellerOrderHeader({ order }) {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-semibold">{order.buyer?.name || "Buyer"}</h3>
+                <h3 className="font-semibold">{buyerInfo.name}</h3>
                 <Badge variant="outline" className="text-xs">
-                  {order.buyer?.level || "Customer"}
+                  {buyerInfo.level}
                 </Badge>
               </div>
-              {order.buyer?.rating && (
-                <div className="flex items-center gap-1 text-amber-500">
-                  <Star className="h-3 w-3 fill-current" />
-                  <span className="text-xs font-medium">{order.buyer?.rating}</span>
-                  <span className="text-xs text-muted-foreground">({order.buyer?.reviews || 0} reviews)</span>
-                </div>
-              )}
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                {buyerInfo.email && <span>{buyerInfo.email}</span>}
+                {buyerInfo.rating > 0 && (
+                  <div className="flex items-center gap-1 text-amber-500">
+                    <Star className="h-3 w-3 fill-current" />
+                    <span className="text-xs font-medium">{buyerInfo.rating}</span>
+                    <span className="text-xs text-muted-foreground">({buyerInfo.reviews} reviews)</span>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
