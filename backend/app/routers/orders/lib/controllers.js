@@ -637,7 +637,79 @@ controllers.extendDelivery = async (req, res) => {
   }
 };
 
+// 11. Complete Milestone
+controllers.completeMilestone = async (req, res) => {
+  try {
+    const { milestoneIndex } = req.params;
+    const { deliverables, feedback } = req.body;
+    const order = await Order.findById(req.params.orderId);
+    
+    if (!order) {
+      return res.status(404).json({ 
+        error: true, 
+        message: 'Order not found' 
+      });
+    }
 
+    // Check if milestone exists
+    if (!order.milestones[milestoneIndex]) {
+      return res.status(404).json({ 
+        error: true, 
+        message: 'Milestone not found' 
+      });
+    }
+
+    // Only seller can mark milestone as completed
+    if (req.user._id.toString() !== order.sellerId.toString()) {
+      return res.status(403).json({
+        error: true,
+        message: 'Only the seller can mark a milestone as completed'
+      });
+    }
+
+    // Update milestone
+    order.milestones[milestoneIndex].status = 'completed';
+    
+    // Add deliverables if provided
+    if (deliverables && deliverables.length > 0) {
+      order.milestones[milestoneIndex].deliverables = deliverables;
+    }
+    
+    // Add feedback if provided
+    if (feedback) {
+      order.milestones[milestoneIndex].feedback = feedback;
+    }
+
+    // Recalculate progress
+    order.progress = order.calculateProgress();
+
+    await order.save();
+
+    // Create system message about the milestone completion
+    const milestoneMessage = {
+      sender: 'seller',
+      userId: req.user._id,
+      text: `Completed milestone: ${order.milestones[milestoneIndex].title}`,
+      time: new Date(),
+      isRead: false
+    };
+
+    order.messages.push(milestoneMessage);
+    await order.save();
+
+    res.json({
+      message: 'Milestone completed successfully',
+      milestone: order.milestones[milestoneIndex],
+      progress: order.progress
+    });
+  } catch (error) {
+    res.status(400).json({ 
+      error: true, 
+      message: 'Error completing milestone', 
+      details: error.message 
+    });
+  }
+};
 
 // 12. Upload File
 controllers.uploadFile = async (req, res) => {
@@ -1092,7 +1164,6 @@ controllers.requestMilestoneRevision = async (req, res) => {
 // Update your existing completeMilestone function
 controllers.completeMilestone = async (req, res) => {
   try {
-    
     const { milestoneId } = req.params; // Changed from milestoneIndex to milestoneId
     const { deliverable, note, completionNote } = req.body;
     const order = await Order.findById(req.params.orderId);
@@ -1133,7 +1204,11 @@ controllers.completeMilestone = async (req, res) => {
       milestone.completionNote = note || completionNote;
     }
 
-    
+    // Recalculate progress
+    order.progress = order.calculateProgress();
+
+    await order.save();
+
     // Create system message about the milestone completion
     const milestoneMessage = {
       sender: 'seller',
@@ -1152,8 +1227,6 @@ controllers.completeMilestone = async (req, res) => {
       progress: order.progress
     });
   } catch (error) {
-    console.log(error.message );
-    
     res.status(400).json({ 
       error: true, 
       message: 'Error completing milestone', 
